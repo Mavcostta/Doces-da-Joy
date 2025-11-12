@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes"
+    />
+    <meta
+      name="description"
+      content="Doces da Joy — tortinhas e cones recheados artesanais. Faça sua encomenda pelo WhatsApp."
+    />
+    <meta name="theme-color" content="#F6BDC0" />
+    <title>Doces da Joy — Tortinhas e Cones Recheados</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <link rel="icon" type="image/png" href="logo.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+      <div class="loading-content">
+        <img src="logo.png" alt="Doces da Joy" class="loading-logo" />
+        <h2>Doces da Joy</h2>
+        <div class="loading-spinner">
+          <div class="spinner-dot"></div>
+          <div class="spinner-dot"></div>
+          <div class="spinner-dot"></div>
+        </div>
+        <p class="loading-text">Preparando doces especiais...</p>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="container">
+        <div class="logo">
+          <img src="logo.png" alt="Doces da Joy" />
+        </div>
+        <nav class="main-nav">
+          <a href="#home">Home</a>
+          <a href="#cardapio">Cardápio</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#feedback">Feedback</a>
+          <a class="cta" href="#contato">Encomendar</a>
+        </nav>
+        <div class="header-actions">
+          <button class="cart-toggle" aria-label="Carrinho">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-badge">0</span>
+          </button>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mini Carrinho -->
+    <div class="mini-cart" id="miniCart">
+      <div class="mini-cart-header">
+        <h3><i class="fas fa-shopping-cart"></i> Carrinho</h3>
+        <button class="close-cart" aria-label="Fechar">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="mini-cart-items" id="cartItems">
+        <p class="empty-cart">Seu carrinho está vazio</p>
+      </div>
+      <div class="mini-cart-footer">
+        <div class="cart-total">
+          <span>Total:</span>
+          <span id="cartTotal">R$ 0,00</span>
+        </div>
+        <a
+          class="btn primary"
+          href="https://wa.me/5511949992735"
+          id="checkoutBtn"
+        >
+          <i class="fab fa-whatsapp"></i> Finalizar Pedido
+        </a>
+      </div>
+    </div>
+
+    <!-- Notificação Toast -->
+    <div class="toast" id="toast">
+      <i class="fas fa-check-circle"></i>
+      <span id="toastMessage">Item adicionado ao carrinho!</span>
+    </div>
+
+    <main>
+      <!-- Hero Banner Carrossel -->
+      <section id="home" class="banner-carousel">
+        <div class="swiper bannerSwiper">
+          <div class="swiper-wrapper">
+            <!-- Slide Principal - Hero -->
+            <div class="swiper-slide">
+              <picture>
+                <source
+                  media="(max-width: 768px)"
+                  srcset="imagens/docesdajoycelular.jpeg"
+                />
+                <img
+                  src="imagens/docesdajoy.jpg"
+                  alt="Doces da Joy"
+                  class="banner-img"
+                />
+              </picture>
+              <div class="banner-content hero-banner">
+                <div class="hero-logo">
+                  <img src="logo.png" alt="Doces da Joy" />
+                </div>
+                <h1>Doces da Joy</h1>
+                <p class="lead">Momentos doces, memórias inesquecíveis</p>
+              </div>
+            </div>
+
+            <!-- Banner 2 - Promoção -->
+            <div class="swiper-slide">
+              <picture>
+                <source
+                  media="(max-width: 768px)"
+                  srcset="imagens/banner (1).jpg"
+                />
+                <img
+                  src="imagens/banner (1).jpg"
+                  alt="Promoção Especial"
+                  class="banner-img"
+                />
+              </picture>
+              <div class="banner-content">
+                <h2>Oferta Irresistível</h2>
+                <p>Na compra de 10 tortinhas, ganhe 2 de brinde</p>
+                <a href="#cardapio" class="btn primary">Conhecer Sabores</a>
+              </div>
+            </div>
+
+            <!-- Banner 3 - Novos Sabores -->
+            <div class="swiper-slide">
+              <picture>
+                <source
+                  media="(max-width: 768px)"
+                  srcset="imagens/banner (2).jpg"
+                />
+                <img
+                  src="imagens/banner (2).jpg"
+                  alt="Novos Sabores"
+                  class="banner-img"
+                />
+              </picture>
+              <div class="banner-content">
+                <h2>Sabores Exclusivos</h2>
+                <p>
+                  Tortinhas artesanais preparadas com ingredientes selecionados
+                </p>
+                <a href="#cardapio" class="btn primary">Fazer Encomenda</a>
+              </div>
+            </div>
+
+            <!-- Banner 4 - Cones -->
+            <div class="swiper-slide">
+              <picture>
+                <source
+                  media="(max-width: 768px)"
+                  srcset="imagens/banner (3).jpg"
+                />
+                <img
+                  src="imagens/banner (3).jpg"
+                  alt="Cones Recheados"
+                  class="banner-img"
+                />
+              </picture>
+              <div class="banner-content">
+                <h2>Cones Artesanais</h2>
+                <p>Crocância perfeita com recheios surpreendentes</p>
+                <a href="#cardapio" class="btn primary">Explorar Sabores</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navegação -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
+
+      <!-- Cardápio Section -->
+      <section id="cardapio" class="section container">
+        <h2 class="fade-in">Nossos Sabores</h2>
+        <p class="section-subtitle fade-in">
+          Doces artesanais feitos com ingredientes premium e muito carinho
+        </p>
+
+        <!-- Filtros e Busca -->
+        <div class="cardapio-controls fade-in">
+          <div class="filters">
+            <button class="filter-btn active" data-filter="all">
+              <i class="fas fa-th"></i> Todos
+            </button>
+            <button class="filter-btn" data-filter="tortinha">
+              <i class="fas fa-cookie"></i> Tortinhas
+            </button>
+            <button class="filter-btn" data-filter="cone">
+              <i class="fas fa-ice-cream"></i> Cones
+            </button>
+          </div>
+          <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input
+              type="text"
+              id="productSearch"
+              placeholder="Buscar produtos..."
+            />
+          </div>
+        </div>
+
+        <div class="grid" id="productsGrid">
+          <!-- Produtos serão carregados via JavaScript -->
+          <!-- Skeleton Loaders -->
+          <div class="product-skeleton"></div>
+          <div class="product-skeleton"></div>
+          <div class="product-skeleton"></div>
+          <div class="product-skeleton"></div>
+          <div class="product-skeleton"></div>
+          <div class="product-skeleton"></div>
+        </div>
+      </section>
+
+      <!-- Sobre Section -->
+      <section id="sobre" class="section container about">
+        <h2>A Arte da Confeitaria</h2>
+        <p class="section-subtitle">
+          Criando momentos especiais através de doces exclusivos
+        </p>
+        <div class="about-inner">
+          <img src="imagens/Joyce.jpeg" alt="Joyce - Doces da Joy" />
+          <div>
+            <p>
+              A <strong>Doces da Joy</strong> nasceu do sonho de transformar
+              momentos simples em memórias doces e inesquecíveis. Cada tortinha
+              e cone recheado é criado com dedicação artesanal, utilizando
+              ingredientes premium cuidadosamente selecionados.
+            </p>
+            <p>
+              Nossa produção é 100% artesanal e feita sob encomenda, garantindo
+              que cada doce chegue fresquinho e perfeito para sua ocasião
+              especial. Seja para celebrações, eventos corporativos ou
+              simplesmente para adoçar seu dia, entregamos qualidade e sabor em
+              cada mordida.
+            </p>
+            <a class="btn primary" href="#contato">Encomendar Agora</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Feedback Section -->
+      <section id="feedback" class="section container">
+        <h2>O Que Dizem Nossos Clientes</h2>
+        <p class="section-subtitle">
+          Depoimentos de quem já experimentou nossos doces
+        </p>
+        <div class="feedback-list">
+          <blockquote class="feedback-item">
+            <p>
+              "As tortinhas da Joy são simplesmente divinas! Delicadas,
+              saborosas e com um acabamento impecável. Fazem qualquer ocasião
+              ser ainda mais especial."
+            </p>
+            <footer>— Mariana Costa</footer>
+          </blockquote>
+
+          <blockquote class="feedback-item">
+            <p>
+              "Atendimento excepcional e entrega pontual. A qualidade dos doces
+              supera todas as expectativas. Recomendo de olhos fechados!"
+            </p>
+            <footer>— Carlos Eduardo</footer>
+          </blockquote>
+
+          <blockquote class="feedback-item">
+            <p>
+              "Pedi os cones recheados para o aniversário da minha filha e todos
+              os convidados adoraram. A crocância é perfeita e o recheio, uma
+              explosão de sabor!"
+            </p>
+            <footer>— Ana Beatriz</footer>
+          </blockquote>
+        </div>
+      </section>
+
+      <!-- Contato Section -->
+      <section id="contato" class="section container">
+        <h2>Entre em Contato</h2>
+        <p class="section-subtitle">
+          Estamos prontos para tornar sua ocasião ainda mais especial
+        </p>
+
+        <div class="contact-cards">
+          <div class="contact-card whatsapp-card">
+            <div class="contact-card-icon">
+              <i class="fab fa-whatsapp"></i>
+            </div>
+            <h3>WhatsApp</h3>
+            <p>Atendimento personalizado e resposta imediata</p>
+            <a
+              class="btn primary btn-lg"
+              href="https://wa.me/5511949992735?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20fazer%20uma%20encomenda%20😊"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-whatsapp"></i> Iniciar Conversa
+            </a>
+          </div>
+
+          <div class="contact-card instagram-card">
+            <div class="contact-card-icon">
+              <i class="fab fa-instagram"></i>
+            </div>
+            <h3>Instagram</h3>
+            <p>Acompanhe nossos lançamentos e bastidores</p>
+            <a
+              class="btn primary btn-lg"
+              href="https://www.instagram.com/doces.da.joy2/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-instagram"></i> Seguir Agora
+            </a>
+          </div>
+
+          <div class="contact-card form-card">
+            <div class="contact-card-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <h3>Formulário</h3>
+            <p>Formulário para encomendas</p>
+            <button class="btn primary btn-lg" id="openFormBtn">
+              <i class="fas fa-paper-plane"></i> Preencher Formulário
+            </button>
+          </div>
+        </div>
+
+        <!-- Formulário oculto -->
+        <div
+          class="contact-form-wrapper"
+          id="contactFormWrapper"
+          style="display: none"
+        >
+          <form class="contact-form-modern" id="contactForm">
+            <h3>Nos envie uma mensagem</h3>
+            <label>
+              Nome Completo
+              <input type="text" name="name" required placeholder="Seu nome" />
+            </label>
+            <label>
+              Telefone / WhatsApp
+              <input
+                type="tel"
+                name="phone"
+                required
+                placeholder="(00) 00000-0000"
+              />
+            </label>
+            <label>
+              Sua Encomenda
+              <textarea
+                name="message"
+                rows="5"
+                required
+                placeholder="Ex: Gostaria de encomendar 12 tortinhas de limão para o dia 15/11"
+              ></textarea>
+            </label>
+            <div class="form-actions">
+              <button class="btn outline" type="button" id="closeFormBtn">
+                <i class="fas fa-times"></i> Cancelar
+              </button>
+              <button class="btn primary" type="submit">
+                <i class="fab fa-whatsapp"></i> Enviar pelo WhatsApp
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container footer-container">
+        <div class="footer-brand">
+          <img src="logo.png" alt="Doces da Joy" class="footer-logo" />
+          <h3>Doces da Joy</h3>
+          <p>Doces artesanais que transformam momentos em memórias especiais</p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="#home">Início</a></li>
+            <li><a href="#cardapio">Cardápio</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-faq">
+          <h4>Sobre Encomendas</h4>
+          <div class="faq-item">
+            <p class="faq-question">📦 Pedido mínimo?</p>
+            <p class="faq-answer">6 unidades</p>
+          </div>
+          <div class="faq-item">
+            <p class="faq-question">⏰ Antecedência?</p>
+            <p class="faq-answer">Mínimo 24 horas</p>
+          </div>
+          <div class="faq-item">
+            <p class="faq-question">🚚 Entrega?</p>
+            <p class="faq-answer">Consulte disponibilidade</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <p>
+            &copy; <span id="year"></span> Doces da Joy. Todos os direitos
+            reservados.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modal de Detalhes do Produto -->
+    <div class="modal" id="productModal">
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Fechar">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="modal-body">
+          <div class="modal-image">
+            <img id="modalImage" src="" alt="" />
+          </div>
+          <div class="modal-info">
+            <h2 id="modalTitle"></h2>
+            <div class="modal-rating" id="modalRating"></div>
+            <div class="modal-price" id="modalPrice"></div>
+            <p id="modalDescription"></p>
+            <div class="quantity-selector">
+              <label>Quantidade:</label>
+              <div class="qty-controls">
+                <button class="qty-btn" id="qtyMinus">
+                  <i class="fas fa-minus"></i>
+                </button>
+                <input type="number" id="qtyInput" value="1" min="1" max="99" />
+                <button class="qty-btn" id="qtyPlus">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+            </div>
+            <button class="btn primary btn-lg" id="addToCartBtn">
+              <i class="fas fa-cart-plus"></i> Adicionar ao Carrinho
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lightbox para Galeria -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" aria-label="Fechar">
+        <i class="fas fa-times"></i>
+      </button>
+      <button class="lightbox-prev" aria-label="Anterior">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button class="lightbox-next" aria-label="Próximo">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+      <img id="lightboxImage" src="" alt="" />
+    </div>
+
+    <!-- Botão Voltar ao Topo -->
+    <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+      // Year auto-update
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Contact form WhatsApp integration
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const name = this.name.value;
+          const phone = this.phone.value;
+          const message = this.message.value;
+          const text = `Encomenda de ${name}\nContato: ${phone}\nMensagem: ${message}`;
+          window.open(
+            `https://wa.me/5511949992735?text=${encodeURIComponent(text)}`
+          );
+        });
+
+      // Mobile menu toggle
+      const toggle = document.querySelector(".mobile-menu-toggle");
+      const nav = document.querySelector(".main-nav");
+      toggle.addEventListener("click", () => nav.classList.toggle("open"));
+    </script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      // Inicializar carrossel de banners
+      const bannerSwiper = new Swiper(".bannerSwiper", {
+        loop: true,
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        effect: "fade",
+        fadeEffect: {
+          crossFade: true,
+        },
+      });
+    </script>
+
+    <script src="app.js"></script>
+  </body>
+</html>
