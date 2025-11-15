@@ -85,6 +85,16 @@ const products = [
     description:
       "Cone crocante com brigadeiro gourmet cremoso e morangos frescos. O clássico brasileiro reinventado.",
   },
+  {
+    id: 9,
+    name: "Cone Oreo",
+    price: 14.0,
+    category: "cone",
+    rating: 5,
+    img: "imagens/Coneoreo.jpeg",
+    description:
+      "Cone artesanal recheado com creme de Oreo e pedaços crocantes do biscoito. Irresistível!",
+  },
 ];
 
 // ===== ESTADO DO CARRINHO =====
